@@ -5,7 +5,12 @@ const noteRouter=require("./routes/noteRoutes");
 const cors = require("cors");
 
 const app = express();
-app.use(cors());
+app.use(cors({ 
+    origin: "http://localhost:5173",  // Allow requests from your frontend
+    methods: "GET,POST,PUT,DELETE",
+    credentials: true
+  }
+));
 app.use(express.json());
 
 
